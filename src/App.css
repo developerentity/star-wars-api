@@ -1,0 +1,33 @@
+.mainWrapper{
+    display: flex;
+}
+.menu {
+    width: 160px;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column; 
+}
+.menu a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+    color: brown;
+}
+.active {
+    background-color: cadetblue;
+}
+.main-page {
+    flex-direction: column;
+}
+.main-menu {
+    width: calc(100vw - 160px);
+    height: 50px;
+    background-color: chocolate;
+}
+.noStarShip{
+    height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
