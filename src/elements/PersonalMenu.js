@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './../App.css';
 
 
-const PersonalMenu = (props) => {
+const PersonMenu = (props) => {
 
     let { setPersonId } = props;
     let [val, setVal] = useState(0)
@@ -20,4 +20,4 @@ const PersonalMenu = (props) => {
 
 }
 
-export default PersonalMenu;
+export default PersonMenu;
