@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import MainContent from './MainContent';
 import './../App.css';
 
 const api = 'https://swapi.dev/api/'
@@ -22,6 +23,12 @@ const PersonsContent = (props) => {
                 Gender: {data?.gender}<br />
                 Height: {data?.height}<br />
                 Birth date: {data?.birth_year}<br />
+                <br />
+                <div className="personShip">
+                    <MainContent
+                        shipApi={data?.starships[0]}
+                    />
+                </div>
             </div>
         )
     } else {

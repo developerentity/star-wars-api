@@ -5,15 +5,23 @@ const api = 'https://swapi.dev/api/'
 
 const MainContent = (props) => {
 
-    const { shipNumber } = props;
+    const { shipNumber, shipApi } = props;
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch(`${api}starships/${shipNumber}/`)
-            .then(res => res.json())
-            .then(res => setData(res))
-            .catch(err => console.error(err))
-    }, [shipNumber])
+        if (!shipApi) {
+            fetch(`${api}starships/${shipNumber}/`)
+                .then(res => res.json())
+                .then(res => setData(res))
+                .catch(err => console.error(err))
+        }
+        if (shipApi) {
+            fetch(shipApi)
+                .then(res => res.json())
+                .then(res => setData(res))
+                .catch(err => console.error(err))
+        }
+    }, [shipNumber, shipApi])
 
     if (data?.name) {
         return (
