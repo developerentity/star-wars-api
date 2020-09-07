@@ -34,7 +34,7 @@ const PersonsContent = (props) => {
     } else {
         return (
             <div className="noStarShip">
-                <div className="noStarShipIn"><h1>Person not found</h1></div>
+                <div className="noStarShipIn">Person not found</div>
             </div>
         )
     }
