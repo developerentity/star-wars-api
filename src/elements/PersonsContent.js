@@ -17,7 +17,7 @@ const PersonsContent = (props) => {
     }, [personId])
     
     let starshipElements = data?.starships
-        .map(starship => <MainContent key={starship.key} shipApi={starship}/>)
+        .map(starship => <MainContent shipApi={starship}/>)
 
     if (data?.name) {
         return (
