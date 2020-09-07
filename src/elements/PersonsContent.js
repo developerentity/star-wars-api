@@ -15,6 +15,9 @@ const PersonsContent = (props) => {
             .then(res => setData(res))
             .catch(err => console.error(err))
     }, [personId])
+    
+    let starshipElements = data?.starships
+        .map(starship => <MainContent key={starship.key} shipApi={starship}/>)
 
     if (data?.name) {
         return (
@@ -25,9 +28,8 @@ const PersonsContent = (props) => {
                 Birth date: {data?.birth_year}<br />
                 <br />
                 <div className="personShip">
-                    <MainContent
-                        shipApi={data?.starships[0]}
-                    />
+                    Starships:
+                    {starshipElements}
                 </div>
             </div>
         )
