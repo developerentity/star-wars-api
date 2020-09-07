@@ -12,9 +12,11 @@ const MainPage = () => {
             <MainMenu
                 setShipNumber={setShipNumber}
             />
-            <MainContent
-                shipNumber={shipNumber}
-            />
+            <div className="content-wrap">
+                <MainContent
+                    shipNumber={shipNumber}
+                />
+            </div>        
         </div>
     )
 }

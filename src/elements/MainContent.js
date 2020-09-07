@@ -25,7 +25,7 @@ const MainContent = (props) => {
 
     if (data?.name) {
         return (
-            <div>
+            <div className="text-wrap">
                 Name: {data?.name}<br />
                 Model: {data?.model}<br />
                 Manufacturer: {data?.manufacturer}<br />

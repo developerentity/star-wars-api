@@ -18,7 +18,7 @@ const PersonsContent = (props) => {
 
     if (data?.name) {
         return (
-            <div>
+            <div className="text-wrap">
                 Person name: {data?.name}<br />
                 Gender: {data?.gender}<br />
                 Height: {data?.height}<br />
@@ -33,8 +33,8 @@ const PersonsContent = (props) => {
         )
     } else {
         return (
-            <div className="noStarShip">
-                <div className="noStarShipIn">Person not found</div>
+            <div className="noStarShip text-wrap">
+                <div>Person not found</div>
             </div>
         )
     }

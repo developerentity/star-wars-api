@@ -19,20 +19,33 @@
     color: white;
     text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 25px rgb(255, 251, 0), 0 0 5px rgb(137, 139, 0);
 }
+.content-wrap{
+    background-color: rgb(12, 11, 11);
+    color: rgb(189, 189, 189);
+    height: calc(100vh - 50px);
+}
+.content-wrap.planets{
+    height: 100vh;
+    width: calc(100vw - 160px);;
+}
+.text-wrap{
+    padding: 10px 10%;
+}
 .main-page {
     width: calc(100vw - 160px);
     flex-direction: column;
 }
 .main-menu {
     height: 50px;
-    background-color: chocolate;
-}
-.noStarShip{
-    /* height: calc(100vh - 160px);
-    display: flex;
-    justify-content: center;
-    align-items: center; */
+    background-color: rgb(250, 225, 6);
 }
 .personShip {
     padding-left: 30px;
+}
+.planets-btn{
+    background-color: rgb(250, 225, 6);
+    width: 100%;
+    height: 40px;
+    border-radius: 2px;
+    margin-bottom: 40px;
 }

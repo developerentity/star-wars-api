@@ -12,9 +12,11 @@ const PersonsPage = () => {
             <PersonalMenu
                 setPersonId={setPersonId}
             />
-            <PersonalContent
-                personId={personId}
-            />
+            <div className="content-wrap">
+                <PersonalContent
+                    personId={personId}
+                />
+            </div>
         </div>
     )
 }

@@ -4,10 +4,12 @@ import Menu from './../elements/Menu'
 
 const NotFound = () => {
     return (
-        <>
+        <div className="content-wrap ">
             <Menu />
-            <h1>404</h1>
-        </>
+            <div className="text-wrap">
+                404
+            </div>
+        </div>
     )
 }
 

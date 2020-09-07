@@ -22,22 +22,24 @@ const PlanetsPage = () => {
     // let planetsArr = [...data.results]
 
     let pseudoPlanetsArr = [
-        {key: 1, name: "Tatooine"}, 
-        {key: 2, name: "Alderaan"}, 
-        {key: 3, name: "Yavin IV" }, 
-        {key: 4, name: "Hoth"}]
+        { key: 1, name: "Tatooine" },
+        { key: 2, name: "Alderaan" },
+        { key: 3, name: "Yavin IV" },
+        { key: 4, name: "Hoth" }]
 
     let planetsElements = pseudoPlanetsArr
         .map(planet => <PlanetsItem key={planet.key} name={planet.name} />)
 
     return (
-        <div>
-            <button onClick={() => setBtn(!btn)}>
-                See the planets
-            </button>
+        <div className="content-wrap planets">
+            <div className="text-wrap">
+                <button className="planets-btn" onClick={() => setBtn(!btn)}>
+                    See the planets
+                </button>
 
-            {planetsElements}
+                {planetsElements}
 
+            </div>
         </div>
     )
 }
