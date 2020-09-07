@@ -35,7 +35,7 @@ const MainContent = (props) => {
     } else {
         return (
             <div className="noStarShip">
-                <div className="noStarShipIn"><h1>Starship not found</h1></div>
+                <div className="noStarShipIn">Starship not found</div>
             </div>
         )
     }

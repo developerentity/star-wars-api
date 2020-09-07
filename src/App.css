@@ -26,10 +26,10 @@
     background-color: chocolate;
 }
 .noStarShip{
-    height: calc(100vh - 160px);
+    /* height: calc(100vh - 160px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 .personShip {
     padding-left: 30px;
