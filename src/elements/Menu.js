@@ -13,6 +13,7 @@ const Menu = () => {
         <div className="menu">
             <Link className={location.pathname === "/" ? "active" : ""} to="/">Main</Link>
             <Link className={location.pathname === "/persons" ? "active" : ""} to="/persons">Persons</Link>
+            <Link className={location.pathname === "/planets" ? "active" : ""} to="/planets">Planets</Link>
         </div>
     )
 }

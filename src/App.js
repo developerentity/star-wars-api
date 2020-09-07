@@ -4,6 +4,7 @@ import MainPage from './pages/MainPage';
 import PersonPage from './pages/PersonsPage';
 import NotFound from './pages/NotFound';
 import Menu from './elements/Menu'
+import PlanetsPage from './pages/PlanetsPage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,10 @@ function App() {
           <Route path="/persons">
             <Menu />
             <PersonPage />
+          </Route>
+          <Route path="/planets">
+            <Menu />
+            <PlanetsPage />
           </Route>
           <Route path="*">
             <Menu />
