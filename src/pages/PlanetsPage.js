@@ -17,14 +17,14 @@ const PlanetsPage = () => {
     }, [api])
 
     let planetsElements = data
-        .map(planet => <PlanetsItem key={planet.name} name={planet.name} />)
+        .map(planet => <PlanetsItem key={planet.name} name={planet.name} rotation_period={planet.rotation_period} orbital_period={planet.orbital_period}/>)
 
     return (
         <div className="content-wrap planets">
             <div className="text-wrap">
-
-                {planetsElements}
-
+                <ul>
+                    {planetsElements}
+                </ul>
                 <button onClick={() => apiFunc(1)}>
                     1
                 </button>
