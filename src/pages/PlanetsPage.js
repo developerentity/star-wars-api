@@ -19,13 +19,15 @@ const PlanetsPage = () => {
     let planetsElements = data
         .map(planet => <PlanetsItem key={planet.name} name={planet.name} rotation_period={planet.rotation_period} orbital_period={planet.orbital_period}/>)
 
-    let newPlanetsArr = []
+    // let newPlanetsArr = []
 
-    for (let i = 0; i < planetsElements.length; i++) {
-        if (i % 2) {
-            newPlanetsArr.push(planetsElements[i]) 
-        }
-    }
+    // for (let i = 0; i < planetsElements.length; i++) {
+    //     if (i % 2) {
+    //         newPlanetsArr.push(planetsElements[i]) 
+    //     }
+    // }
+
+    let newPlanetsArr = planetsElements.filter((item, index) => index % 2 )
 
     return (
         <div className="content-wrap planets">
