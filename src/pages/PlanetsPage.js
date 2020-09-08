@@ -5,16 +5,16 @@ import PlanetsItem from './../elements/PlanetsItems';
 const PlanetsPage = () => {
 
     const [data, setData] = useState([]);
-    const [btn, setBtn] = useState(false);
+    const [api, setApi] = useState(`https://swapi.dev/api/planets/`)
+   
+    const apiFunc = (btnNum) => setApi(`https://swapi.dev/api/planets/?page=${btnNum}`)
 
     useEffect(() => {
-
-        fetch(`https://swapi.dev/api/planets/`)
+        fetch(api)
             .then(res => res.json())
             .then(res => setData(res.results))
             .catch(err => console.error(err))
-
-    }, [btn])
+    }, [api])
 
     let planetsElements = data
         .map(planet => <PlanetsItem key={planet.name} name={planet.name} />)
@@ -22,12 +22,27 @@ const PlanetsPage = () => {
     return (
         <div className="content-wrap planets">
             <div className="text-wrap">
-                <button className="planets-btn" onClick={() => setBtn(!btn)}>
-                    See the planets
-                </button>
 
                 {planetsElements}
 
+                <button onClick={() => apiFunc(1)}>
+                    1
+                </button>
+                <button onClick={() => apiFunc(2)}>
+                    2
+                </button>
+                <button onClick={() => apiFunc(3)}>
+                    3
+                </button>
+                <button onClick={() => apiFunc(4)}>
+                    4
+                </button>
+                <button onClick={() => apiFunc(5)}>
+                    5
+                </button>
+                <button onClick={() => apiFunc(6)}>
+                    6
+                </button>
             </div>
         </div>
     )
