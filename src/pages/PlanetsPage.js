@@ -19,11 +19,19 @@ const PlanetsPage = () => {
     let planetsElements = data
         .map(planet => <PlanetsItem key={planet.name} name={planet.name} rotation_period={planet.rotation_period} orbital_period={planet.orbital_period}/>)
 
+    let newPlanetsArr = []
+
+    for (let i = 0; i < planetsElements.length; i++) {
+        if (i % 2) {
+            newPlanetsArr.push(planetsElements[i]) 
+        }
+    }
+
     return (
         <div className="content-wrap planets">
             <div className="text-wrap">
                 <ul>
-                    {planetsElements}
+                    {newPlanetsArr}
                 </ul>
                 <button onClick={() => apiFunc(1)}>
                     1
