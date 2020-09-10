@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './../App.css';
 
 class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
+
     render() {
         return (
             <div>
-                <h2>Сейчас {this.props.date.toLocaleTimeString()}.</h2>
+                <h2>Сейчас {this.state.date.toLocaleTimeString()}.</h2>
             </div>
         );
     }  
@@ -14,7 +19,7 @@ class Clock extends React.Component {
 
 function tick() {
         ReactDOM.render(
-            <Clock date={new Date()} />,
+            <Clock />,
             document.getElementById('root')
         );
     }
