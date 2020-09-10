@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './../App.css';
 
-function Clock(props) {
-    return (
-        <div>
-            <h2>Сейчас {props.date.toLocaleTimeString()}.</h2>
-        </div>
-    );
+class Clock extends React.Component {
+    render() {
+        return (
+            <div>
+                <h2>Сейчас {this.props.date.toLocaleTimeString()}.</h2>
+            </div>
+        );
+    }  
 }
 
 function tick() {
