@@ -4,9 +4,9 @@ const PlanetsItem = (props) => {
     return (
         <div>
             <li>
-                Name: {props.name} <br />
-                Orbital period: {props.orbital_period} <br />
-                Rotation period: {props.rotation_period}
+                Name: {props.name},
+                Orbital period: {props.orbital_period},
+                Rotation period: {props.rotation_period};
             </li>
             <br />
         </div>
