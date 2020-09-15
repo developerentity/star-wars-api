@@ -49,3 +49,13 @@
     border-radius: 2px;
     margin-bottom: 40px;
 }
+.pagination li{
+    display: inline-block;
+}
+.pagination a{
+    padding: 10px;
+    border-radius: 10%;
+}
+.pagination .active a{
+    background-color: rgb(44, 44, 44);
+}
