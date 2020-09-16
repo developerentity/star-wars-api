@@ -6,7 +6,7 @@ const api = 'https://swapi.dev/api/'
 
 const PersonsContent = (props) => {
 
-    const { personId } = props;
+    const { personId, searchList, searchString } = props;
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -15,30 +15,41 @@ const PersonsContent = (props) => {
             .then(res => setData(res))
             .catch(err => console.error(err))
     }, [personId])
+
+    let searchArr = searchList.map(item => <div key={item.name}>{item.name}</div>)
     
     let starshipElements = data?.starships
         .map(starship => <MainContent key={starship.toString()} shipApi={starship}/>)
 
-    if (data?.name) {
+    if (searchString !== '') {
         return (
-            <div className="text-wrap">
-                Person name: {data?.name}<br />
-                Gender: {data?.gender}<br />
-                Height: {data?.height}<br />
-                Birth date: {data?.birth_year}<br />
-                <br />
-                <div className="personShip">
-                    Starships:
-                    {starshipElements}
-                </div>
+            <div>
+                Results:<br />
+                {searchArr}
             </div>
         )
     } else {
-        return (
-            <div className="noStarShip text-wrap">
-                <div>Person not found</div>
-            </div>
-        )
+        if (data?.name) {
+            return (
+                <div className="text-wrap">
+                    Person name: {data?.name}<br />
+                    Gender: {data?.gender}<br />
+                    Height: {data?.height}<br />
+                    Birth date: {data?.birth_year}<br />
+                    <br />
+                    <div className="personShip">
+                        Starships:
+                        {starshipElements}
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className="noStarShip text-wrap">
+                    <div>Person not found</div>
+                </div>
+            )
+        }
     }
 }
 
