@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './../App.css';
-
 
 const PersonMenu = (props) => {
 
-    let { setPersonId, setSearchList, searchString, setSearchString } = props;
-    let [val, setVal] = useState(0)
+    const { setSearchString, setPersonId } = props;
+    const [val, setVal] = useState(0)
+    // const [personId, setPersonId] = useState(1);
 
-    useEffect(() => {
-        fetch(`https://swapi.dev/api/people/?search=${searchString}`)
-            .then(res => res.json())
-            .then(res => setSearchList(res.results))
-            .catch(err => console.error(err))
-    }, [searchString])
+    // useEffect(() => {
+    //     fetch(`https://swapi.dev/api/people/?search=${searchString}`)
+    //         .then(res => res.json())
+    //         .then(res => setSearchList(res.results))
+    //         .catch(err => console.error(err))
+    // }, [searchString])
+
+    // useEffect(() => {
+    //     fetch(`https://swapi.dev/api/people/${personId}/`)
+    //         .then(res => res.json())
+    //         .then(res => setData(res))
+    //         .catch(err => console.error(err))
+    // }, [personId])
 
     return (
         <div>

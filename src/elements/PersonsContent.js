@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './../App.css';
 import PersonItem from './PersonItem'
 
-const api = 'https://swapi.dev/api/'
-
 const PersonsContent = (props) => {
 
-    const { personId, searchList, searchString } = props;
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-        fetch(`${api}people/${personId}/`)
-            .then(res => res.json())
-            .then(res => setData(res))
-            .catch(err => console.error(err))
-    }, [personId])
+    const { searchList, searchString, data } = props;
 
     let searchArr = searchList.map(item => <div key={item.name}>{item.name}</div>)
     
