@@ -15,9 +15,8 @@ const PersonMenu = (props) => {
                     onChange={(e) => setVal(e.target.value)}
                 />
                 <input type="submit" value="Find" onClick={() => { setPersonId(val) }} />
-            </div>
-            <div className="search-wrap">
                 <input
+                    className="search-textarea"
                     type="text"
                     placeholder="Search"
                     onChange={(e) => setSearchString(e.target.value)}
