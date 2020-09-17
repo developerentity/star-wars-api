@@ -45,6 +45,7 @@ const PersonsPage = () => {
                 searchString={searchString}
                 setData={setData}
                 setPersonId={setPersonId}
+                searchString={searchString}
             />
             <div className="content-wrap">
                 <PersonalContent
