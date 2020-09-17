@@ -4,9 +4,7 @@ import PersonItem from './PersonItem'
 
 const PersonsContent = (props) => {
 
-    const { searchList, searchString, data } = props;
-
-    let searchArr = searchList.map(item => <div key={item.name}>{item.name}</div>)
+    const { searchArr, searchString, data } = props;
     
     if (searchString !== '') {
         return (

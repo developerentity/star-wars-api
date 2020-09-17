@@ -10,6 +10,8 @@ const PersonsPage = () => {
     const [searchString, setSearchString] = useState('');
     const [personId, setPersonId] = useState(1);
 
+    const searchArr = searchList.map(item => <div key={item.name}>{item.name}</div>);
+
     useEffect(() => {
         fetch(`https://swapi.dev/api/people/?search=${searchString}`)
             .then(res => res.json())
@@ -38,6 +40,7 @@ const PersonsPage = () => {
                     searchList={searchList}
                     searchString={searchString}
                     data={data}
+                    searchArr={searchArr}
                 />
             </div>
         </div>
