@@ -6,7 +6,6 @@ import ReactPaginate from 'react-paginate'
 const PlanetsPage = () => {
 
     const [data, setData] = useState([]);
-    const api =`https://swapi.dev/api/planets/`;
     const [page, setPage] = useState(1)
 
     let crutch = (d) => setPage(d.selected + 1);
@@ -15,7 +14,7 @@ const PlanetsPage = () => {
     // const apiFunc = (btnNum) => setApi(`https://swapi.dev/api/planets/?page=${btnNum}`)
 
     useEffect(() => {
-        fetch(`${api}?page=${page}`)
+        fetch(`https://swapi.dev/api/planets/?page=${page}`)
             .then(res => res.json())
             .then(res => setData(res.results))
             .catch(err => console.error(err))
