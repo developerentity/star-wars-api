@@ -62,3 +62,11 @@
 .search-textarea{
     float: right;
 }
+.search-block{
+    background-color: rgb(250, 225, 6);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    float: right;
+    border-radius: 5px;
+    margin-top: -5px;
+}

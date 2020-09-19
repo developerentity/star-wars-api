@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './../App.css';
 import PersonsMenu from './../elements/PersonsMenu';
-import PersonalContent from './../elements/PersonsContent';
+import PersonsContent from './../elements/PersonsContent';
 
 const PersonsPage = () => {
 
@@ -47,7 +47,7 @@ const PersonsPage = () => {
                 setPersonId={setPersonId}
             />
             <div className="content-wrap">
-                <PersonalContent
+                <PersonsContent
                     searchList={searchList}
                     searchString={searchString}
                     data={data}

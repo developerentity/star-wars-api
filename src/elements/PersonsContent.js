@@ -8,8 +8,7 @@ const PersonsContent = (props) => {
     
     if (searchString !== '') {
         return (
-            <div>
-                Results:<br />
+            <div className='search-block'>
                 {searchArr}
             </div>
         )
