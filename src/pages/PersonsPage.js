@@ -7,6 +7,7 @@ const PersonsPage = () => {
 
     const [data, setData] = useState(null);
     const [searchList, setSearchList] = useState([]);
+    const [searchList2, setSearchList2] = useState([]);
     const [searchString, setSearchString] = useState('');
     const [personId, setPersonId] = useState(1);
     const [api, setApi] = useState('');
@@ -16,7 +17,12 @@ const PersonsPage = () => {
         setSearchString('')
     };
 
-    const searchArr = searchList
+    let personArr = [...searchList]
+    let starshipArr = [...searchList2]
+
+    let arr = personArr.concat(starshipArr)
+
+    const searchArr = arr
         .map(item =>
             (<li key={item.name} onClick={() => searchingPerson(item.url)}>
                 {item.name}
@@ -27,6 +33,13 @@ const PersonsPage = () => {
         fetch(`https://swapi.dev/api/people/?search=${searchString}`)
             .then(res => res.json())
             .then(res => setSearchList(res.results))
+            .catch(err => console.error(err))
+    }, [searchString])
+
+    useEffect(() => {
+        fetch(`https://swapi.dev/api/starships/?search=${searchString}`)
+            .then(res => res.json())
+            .then(res => setSearchList2(res.results))
             .catch(err => console.error(err))
     }, [searchString])
 
