@@ -14,6 +14,7 @@ const PersonsPage = () => {
 
     const searchingPerson = (url) => {
         setApi(url)
+        localStorage.setItem('searchString', searchString)
         setSearchString('')
     };
 
@@ -28,6 +29,13 @@ const PersonsPage = () => {
                 {item.name}
             </li>)
         );
+
+    useEffect(() => {
+        if (localStorage.getItem("searchString")) {
+            setSearchString(localStorage.getItem("searchString"))
+            localStorage.removeItem("searchString")
+        }
+    }, [])
 
     useEffect(() => {
         fetch(`https://swapi.dev/api/people/?search=${searchString}`)
