@@ -34,9 +34,6 @@ const PersonsPage = () => {
             .then(res => res.json())
             .then(res => setSearchList(res.results))
             .catch(err => console.error(err))
-    }, [searchString])
-
-    useEffect(() => {
         fetch(`https://swapi.dev/api/starships/?search=${searchString}`)
             .then(res => res.json())
             .then(res => setSearchList2(res.results))
