@@ -5,7 +5,7 @@ import MainContent from './MainContent';
 const PersonItem = (props) => {
     
     let starshipElements = props.data?.starships
-        .map(starship => <MainContent key={starship.toString()} shipApi={starship} />)
+        .map(starship => <MainContent key={starship.toString()} data={starship} />)
 
     return (
         <div>

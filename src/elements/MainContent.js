@@ -1,44 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import './../App.css';
+import StarshipItem from './StarshipItem'
 
 const api = 'https://swapi.dev/api/'
 
 const MainContent = (props) => {
 
-    const { shipNumber, shipApi } = props;
-    const [data, setData] = useState(null);
+    const { data } = props;
+    const [starship, setStarship] = useState({})
 
     useEffect(() => {
-        if (!shipApi) {
-            fetch(`${api}starships/${shipNumber}/`)
+        if (typeof data === "number") {
+            fetch(`${api}starships/${data}/`)
                 .then(res => res.json())
-                .then(res => setData(res))
+                .then(res => setStarship(res))
+                .catch(err => console.error(err))
+        } else if (typeof data === "string") {
+            fetch(data)
+                .then(res => res.json())
+                .then(res => setStarship(res))
                 .catch(err => console.error(err))
         }
-        if (shipApi) {
-            fetch(shipApi)
-                .then(res => res.json())
-                .then(res => setData(res))
-                .catch(err => console.error(err))
-        }
-    }, [shipNumber, shipApi])
+    }, [data])
 
-    if (data?.name) {
-        return (
-            <div className="text-wrap">
-                Name: {data?.name}<br />
-                Model: {data?.model}<br />
-                Manufacturer: {data?.manufacturer}<br />
-                Starship class: {data?.starship_class}<br />
-            </div>
-        )
-    } else {
-        return (
-            <div className="noStarShip">
-                <div className="noStarShipIn">Starship not found</div>
-            </div>
-        )
-    }
+    return (
+        <StarshipItem
+            data={starship}
+        />
+    )
 }
 
 export default MainContent;

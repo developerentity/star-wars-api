@@ -14,7 +14,7 @@ const MainMenu = (props) => {
                 placeholder="Enter ship number"
                 onChange={(e) => setVal(e.target.value)}
             />
-            <input type="submit" value="Find" onClick={() => { setShipNumber(val) }} />
+            <input type="submit" value="Find" onClick={() => { setShipNumber(parseInt(val)) }} />
         </div>
     )
 

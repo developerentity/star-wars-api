@@ -14,7 +14,7 @@ const MainPage = () => {
             />
             <div className="content-wrap">
                 <MainContent
-                    shipNumber={shipNumber}
+                    data={shipNumber}
                 />
             </div>        
         </div>
