@@ -6,11 +6,12 @@ import MainMenu from './../elements/MainMenu';
 const MainPage = () => {
 
     const [shipNumber, setShipNumber] = useState(9);
-    const [searchString, setSearchString] = useState('');
+    const [searchString, setSearchString] = useState(localStorage.getItem('swapiSearch') || '');
     const [searchArr, setSearchArr] = useState([]);
 
     const selectItem = (url) => {
         setShipNumber(url)
+        localStorage.setItem('swapiSearch',searchString)
         setSearchString('')
     }
 

@@ -21,6 +21,7 @@ const MainMenu = (props) => {
                 onChange={(e) => setSearchString(e.target.value)}
                 value={searchString}
             />
+            <input type='button' value='Clear' onClick={() => {localStorage.removeItem('swapiSearch'); setSearchString('')}} />
         </div>
     )
 }
