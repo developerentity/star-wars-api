@@ -4,7 +4,7 @@ import './../App.css';
 
 const MainMenu = (props) => {
 
-    let { setShipNumber } = props;
+    let { setShipNumber, searchString, setSearchString } = props;
     let [val, setVal] = useState(0)
 
     return (
@@ -15,9 +15,14 @@ const MainMenu = (props) => {
                 onChange={(e) => setVal(e.target.value)}
             />
             <input type="submit" value="Find" onClick={() => { setShipNumber(parseInt(val)) }} />
+            <input
+                type='text'
+                placeholder='Search'
+                onChange={(e) => setSearchString(e.target.value)}
+                value={searchString}
+            />
         </div>
     )
-
 }
 
 export default MainMenu;

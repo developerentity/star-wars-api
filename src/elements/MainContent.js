@@ -6,7 +6,7 @@ const api = 'https://swapi.dev/api/'
 
 const MainContent = (props) => {
 
-    const { data } = props;
+    const { data, searchList, searchString } = props;
     const [starship, setStarship] = useState({})
 
     useEffect(() => {
@@ -23,11 +23,30 @@ const MainContent = (props) => {
         }
     }, [data])
 
-    return (
-        <StarshipItem
-            data={starship}
-        />
-    )
+    if (searchString) {
+        if (searchList.length > 0) {
+            return (
+                <div className='search-block'>
+                    <ul>
+                        {searchList}
+                    </ul>
+                </div>
+            )
+        }
+        else {
+            return (
+                <div className='search-block'>
+                    <>Not found</>
+                </div>
+            )
+        }
+    } else {
+        return (
+            <StarshipItem
+                data={starship}
+            />
+        )
+    }
 }
 
 export default MainContent;
