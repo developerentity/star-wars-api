@@ -37,7 +37,7 @@ import './../App.css';
 
 const Clock = () => {
 
-    const [time, setTime] = useState(`${new Date()}`)
+    const [time, setTime] = useState(new Date().toLocaleTimeString())
     
     useEffect(() => {
         let timerId = setInterval(
@@ -47,15 +47,15 @@ const Clock = () => {
         return () => {
             clearInterval(timerId)
         }
-    }, [])
+    }, [time])
 
     const tick = () => {
-        setTime(`${new Date()}`)
+        setTime(new Date().toLocaleTimeString())
     }
 
     return (
         <div>
-            <h2>Сейчас {time}</h2>
+            <h2>{time}</h2>
         </div>
     );
 }
