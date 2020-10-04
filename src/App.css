@@ -92,3 +92,6 @@
 .search-block ul li:hover{
     text-shadow: 2px 2px 4px #000000;
 }
+.clock {
+    margin: -15px 0 -15px 0;
+}

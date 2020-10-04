@@ -5,7 +5,6 @@ import PersonPage from './pages/PersonsPage';
 import NotFound from './pages/NotFound';
 import Menu from './elements/Menu'
 import PlanetsPage from './pages/PlanetsPage'
-import ClockPage from './pages/ClockPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,10 +30,6 @@ function App() {
           <Route path="/planets">
             <Menu />
             <PlanetsPage />
-          </Route>
-          <Route path="/clock">
-            <Menu />
-            <ClockPage />
           </Route>
           <Route path="*">
             <Menu />
