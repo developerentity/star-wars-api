@@ -40,10 +40,13 @@ const Clock = () => {
     const [time, setTime] = useState(`${new Date()}`)
     
     useEffect(() => {
-        setInterval(
+        let timerId = setInterval(
             () => tick(),
             1000
         )
+        return () => {
+            clearInterval(timerId)
+        }
     }, [])
 
     const tick = () => {
