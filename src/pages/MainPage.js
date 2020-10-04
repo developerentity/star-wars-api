@@ -9,6 +9,11 @@ const MainPage = () => {
     const [searchString, setSearchString] = useState('');
     const [searchArr, setSearchArr] = useState([]);
 
+    const selectItem = (url) => {
+        setShipNumber(url)
+        setSearchString('')
+    }
+
     useEffect(() => {
         fetch(`https://swapi.dev/api/starships/?search=${searchString}`)
             .then(res => res.json())
@@ -17,7 +22,7 @@ const MainPage = () => {
     }, [searchString])
 
     let searchList = searchArr
-        .map(item => <li key={item.name.toString()}>
+        .map(item => <li key={item.name.toString()} onClick={() => selectItem(item.url)}>
             {item.name}
         </li>)
 
