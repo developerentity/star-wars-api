@@ -86,3 +86,9 @@
     border-radius: 5px;
     margin-top: -5px;
 }
+.search-block ul li {
+    cursor: pointer;
+}
+.search-block ul li:hover{
+    text-shadow: 2px 2px 4px #000000;
+}

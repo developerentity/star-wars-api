@@ -16,12 +16,17 @@ const MainMenu = (props) => {
             />
             <input type="submit" value="Find" onClick={() => { setShipNumber(parseInt(val)) }} />
             <input
+                className="search-textarea"
                 type='text'
                 placeholder='Search'
                 onChange={(e) => setSearchString(e.target.value)}
                 value={searchString}
             />
-            <input type='button' value='Clear' onClick={() => {localStorage.removeItem('swapiSearch'); setSearchString('')}} />
+            <input
+                className="search-textarea"
+                type='button'
+                value='Clear'
+                onClick={() => { localStorage.removeItem('swapiSearch'); setSearchString('') }} />
         </div>
     )
 }
