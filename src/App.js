@@ -6,7 +6,7 @@ import NotFound from './pages/NotFound';
 import Menu from './elements/Menu'
 import PlanetsPage from './pages/PlanetsPage'
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route
 } from "react-router-dom";
@@ -17,7 +17,7 @@ import {
 function App() {
   return (
     <div className="mainWrapper">
-      <Router>
+      <HashRouter>
         <Switch>
           <Route exact path="/">
             <Menu />
@@ -36,7 +36,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
